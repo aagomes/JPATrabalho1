@@ -5,8 +5,10 @@
  */
 package br.edu.ifsul.testes;
 
-import br.edu.ifsul.modelo.Instituicao;
-import java.util.Calendar;
+import br.edu.ifsul.modelo.Aluno;
+import br.edu.ifsul.modelo.Curso;
+import br.edu.ifsul.modelo.Disciplina;
+import br.edu.ifsul.modelo.Nota;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -15,7 +17,7 @@ import javax.persistence.Persistence;
  *
  * @author alexandre
  */
-public class TestePersistirInstituicao {
+public class TestePersistirNota {
 
     /**
      * @param args the command line arguments
@@ -24,16 +26,17 @@ public class TestePersistirInstituicao {
         // TODO code application logic here
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("TrabalhoJPAPU");
         EntityManager em = emf.createEntityManager();
-        Instituicao in = new Instituicao();
-        //in.setId(1);
-        in.setNome("IFSul-Passo Fundo");
-        in.setAnoFundacao(Calendar.getInstance());
+        Nota n = new Nota();        
+        n.setNota01(7.0);
+        n.setNota02(8.0);
+        n.setMedia((n.getNota01()+n.getNota02())/2);
+        n.setAluno(em.find(Aluno.class, 1));
+        n.setDisciplina(em.find(Disciplina.class, 2));
         em.getTransaction().begin();
-        em.persist(in);
+        em.persist(n);
         em.getTransaction().commit();
         em.close();
         emf.close();
-
     }
-
+    
 }
