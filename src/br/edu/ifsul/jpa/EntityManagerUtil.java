@@ -19,7 +19,7 @@ public class EntityManagerUtil {
     
     public static EntityManager getEntityManager(){
         if (factory == null){
-            factory = Persistence.createEntityManagerFactory("TrabalhoJPA_PU");
+            factory = Persistence.createEntityManagerFactory("TrabalhoJPAPU");
         }
         if (em == null){
             em = factory.createEntityManager();
