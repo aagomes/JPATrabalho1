@@ -43,7 +43,7 @@ public class Professor implements Serializable {
     private String topicosInteresse;
     @ManyToOne
     @JoinColumn(name = "especialidade", referencedColumnName = "id", nullable = false)
-    private Integer especialidade;
+    private Especialidade especialidade;
     
 
     public Professor() {
@@ -73,11 +73,12 @@ public class Professor implements Serializable {
         this.topicosInteresse = topicosInteresse;
     }
     
-    public Integer getEspecialidade() {
+
+    public Especialidade getEspecialidade() {
         return especialidade;
     }
 
-    public void setEspecialidade(Integer especialidade) {
+    public void setEspecialidade(Especialidade especialidade) {
         this.especialidade = especialidade;
     }
 
@@ -102,5 +103,6 @@ public class Professor implements Serializable {
         }
         return true;
     }       
+
   
 }

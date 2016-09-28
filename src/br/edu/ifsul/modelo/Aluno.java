@@ -99,6 +99,14 @@ public class Aluno implements Serializable {
     public void setNascimento(Calendar nascimento) {
         this.nascimento = nascimento;
     }
+    
+    public List<Disciplina> getAlunoDisciplina() {
+        return alunoDisciplina;
+    }
+
+    public void setAlunoDisciplina(List<Disciplina> alunoDisciplina) {
+        this.alunoDisciplina = alunoDisciplina;
+    }
 
     @Override
     public int hashCode() {
