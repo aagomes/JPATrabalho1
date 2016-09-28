@@ -25,7 +25,7 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name = "instituicao")
-public class Instituicao implements Serializable {
+public class Instituicao {
     @Id
     @SequenceGenerator(name = "seq_instituicao", sequenceName = "seq_instituicao_id", allocationSize = 1)
     @GeneratedValue(generator = "seq_instituicao", strategy = GenerationType.SEQUENCE)    
