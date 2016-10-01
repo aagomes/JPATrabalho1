@@ -25,7 +25,7 @@ public class TestePersistirAlunoDisciplina {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("TrabalhoJPAPU");
         EntityManager em = emf.createEntityManager();
             Aluno a = em.find(Aluno.class, 1);
-            Disciplina d = em.find(Disciplina.class, 1);
+            Disciplina d = em.find(Disciplina.class, 2);
             a.getAlunoDisciplina().add(d);
         em.getTransaction().begin();
         em.persist(a);

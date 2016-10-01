@@ -17,6 +17,7 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
@@ -51,6 +52,13 @@ public class Disciplina implements Serializable {
     @JoinColumn(name = "curso_id", referencedColumnName = "id", nullable = false)
     private Curso curso;
     @ManyToMany
+            @JoinTable(name = "aluno_disciplina",
+            joinColumns = 
+            @JoinColumn(name = "disciplina", referencedColumnName = "id", 
+                    nullable = false),
+            inverseJoinColumns = 
+            @JoinColumn(name = "aluno", referencedColumnName = "id",
+                    nullable = false))
     List<Aluno> alunoDisciplina = new ArrayList<>();
     //array de alunos
     //comentario teste

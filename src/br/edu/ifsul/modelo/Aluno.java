@@ -56,7 +56,7 @@ public class Aluno implements Serializable {
     @Column(name = "nascimento", nullable = false)
     private Calendar nascimento;
     @ManyToMany
-    @JoinTable(name = "alunoDisciplina",
+    @JoinTable(name = "aluno_disciplina",
             joinColumns = 
             @JoinColumn(name = "aluno", referencedColumnName = "id", 
                     nullable = false),
