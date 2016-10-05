@@ -9,6 +9,7 @@ import static com.sun.corba.se.spi.presentation.rmi.StubAdapter.request;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -60,6 +61,7 @@ public class Instituicao implements Serializable{
     }
 
     public Calendar getAnoFundacao() {
+            
         return anoFundacao;
     }
 

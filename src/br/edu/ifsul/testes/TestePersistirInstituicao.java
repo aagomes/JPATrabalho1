@@ -6,6 +6,7 @@
 package br.edu.ifsul.testes;
 
 import br.edu.ifsul.modelo.Instituicao;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
